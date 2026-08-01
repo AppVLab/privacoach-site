@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PrivaCoach — Politique de confidentialité</title>
+    <meta
+      name="description"
+      content="Politique de confidentialité de PrivaCoach : données santé, IA locale et mode cloud anonymisé."
+    />
+    <style>
+      :root {
+        --bg0: #0f1419;
+        --bg1: #1a2332;
+        --ink: #eef3f8;
+        --muted: #9aafc2;
+        --accent: #5eead4;
+        --line: rgba(238, 243, 248, 0.12);
+        --card: rgba(255, 255, 255, 0.04);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+          serif;
+        color: var(--ink);
+        background:
+          radial-gradient(1200px 600px at 10% -10%, #243b55 0%, transparent 55%),
+          radial-gradient(900px 500px at 100% 0%, #1d4e4a 0%, transparent 45%),
+          linear-gradient(165deg, var(--bg0), var(--bg1) 55%, #121820);
+        line-height: 1.55;
+      }
+
+      main {
+        width: min(720px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 3.5rem 0 4rem;
+      }
+
+      .brand {
+        font-size: clamp(2.4rem, 7vw, 3.4rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin: 0 0 0.35rem;
+      }
+
+      .brand span {
+        color: var(--accent);
+      }
+
+      .lede {
+        margin: 0 0 1.75rem;
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 36ch;
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .toolbar button {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--ink);
+        border-radius: 999px;
+        padding: 0.45rem 0.95rem;
+        font: inherit;
+        font-size: 0.92rem;
+        cursor: pointer;
+      }
+
+      .toolbar button[aria-pressed="true"] {
+        border-color: var(--accent);
+        color: var(--bg0);
+        background: var(--accent);
+        font-weight: 700;
+      }
+
+      article {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 1.4rem 1.35rem 1.1rem;
+        backdrop-filter: blur(8px);
+      }
+
+      h1 {
+        font-size: 1.35rem;
+        margin: 0 0 0.85rem;
+      }
+
+      .intro {
+        margin: 0 0 1.4rem;
+        color: var(--muted);
+      }
+
+      section + section {
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--line);
+      }
+
+      h2 {
+        font-size: 1.05rem;
+        margin: 0 0 0.4rem;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      footer {
+        margin-top: 1.75rem;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      footer a {
+        color: var(--accent);
+      }
+
+      .lang {
+        display: none;
+      }
+
+      .lang.is-active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="brand">Priva<span>Coach</span></p>
+      <p class="lede" data-i18n-lede>
+        Coach santé &amp; sport privé — local-first.
+      </p>
+
+      <div class="toolbar" role="group" aria-label="Language">
+        <button type="button" id="btn-fr" aria-pressed="true">FR</button>
+        <button type="button" id="btn-en" aria-pressed="false">EN</button>
+      </div>
+
+      <article id="lang-fr" class="lang is-active" lang="fr">
+        <h1>Politique de confidentialité</h1>
+        <p class="intro">
+          PrivaCoach est conçu pour garder le contrôle de tes données sur ton
+          appareil. Cette page résume ce qui est collecté, traité et — le cas
+          échéant — envoyé.
+        </p>
+
+        <section>
+          <h2>1. Données traitées sur l'appareil</h2>
+          <p>
+            Tes métriques de santé (pas, sommeil, fréquence cardiaque, VFC,
+            hydratation…), ton profil, tes habitudes sportives et l'historique
+            du coach sont stockés localement sur ton téléphone. Tu peux exporter
+            ou restaurer une sauvegarde fichier depuis les réglages.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Health Connect / Apple Santé</h2>
+          <p>
+            Avec ton accord, PrivaCoach lit (et peut écrire l'hydratation) via
+            Health Connect (Android) ou Apple Santé (iOS). Ces données ne
+            quittent pas ton appareil sauf si tu actives explicitement le mode
+            cloud anonymisé.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. IA locale (Gemma)</h2>
+          <p>
+            En mode local, le modèle d'IA est téléchargé puis exécuté sur ton
+            appareil. Le téléchargement peut passer par Hugging Face ; aucune
+            conversation n'est envoyée à nos serveurs dans ce mode.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Mode cloud anonymisé</h2>
+          <p>
+            Si tu choisis le cloud, un résumé de métriques et le message coach
+            sont envoyés à un proxy sécurisé pour générer la réponse. Évite d'y
+            mettre des informations personnelles identifiantes. Les journaux
+            techniques du proxy sont conservés au maximum 30 jours à des fins
+            de sécurité et de diagnostic, puis supprimés. Nous ne vendons pas
+            tes données.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Musique en cours (Android)</h2>
+          <p>
+            L'accès aux notifications média sert uniquement à afficher le titre
+            / artiste en cours et à contrôler la lecture. Aucune notification
+            n'est stockée ni transmise.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Contact</h2>
+          <p>
+            Pour toute question relative à tes données, contacte
+            <strong>AppVLab</strong> (éditeur de PrivaCoach) via la fiche store
+            ou ouvre une issue sur le dépôt GitHub du projet.
+          </p>
+        </section>
+      </article>
+
+      <article id="lang-en" class="lang" lang="en">
+        <h1>Privacy policy</h1>
+        <p class="intro">
+          PrivaCoach is designed so you keep control of your data on your
+          device. This page summarizes what is collected, processed, and — when
+          applicable — sent.
+        </p>
+
+        <section>
+          <h2>1. On-device data</h2>
+          <p>
+            Your health metrics (steps, sleep, heart rate, HRV, hydration…),
+            profile, workout habits and coach history are stored locally on
+            your phone. You can export or restore a file backup from Settings.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Health Connect / Apple Health</h2>
+          <p>
+            With your permission, PrivaCoach reads (and may write hydration)
+            via Health Connect (Android) or Apple Health (iOS). This data stays
+            on your device unless you explicitly enable anonymized cloud mode.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. On-device AI (Gemma)</h2>
+          <p>
+            In local mode, the AI model is downloaded and runs on your device.
+            The download may go through Hugging Face; no conversations are sent
+            to our servers in this mode.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Anonymized cloud mode</h2>
+          <p>
+            If you choose cloud mode, a metrics summary and the coach message
+            are sent to a secured proxy to generate the reply. Avoid including
+            personally identifying information. Technical proxy logs are kept
+            for at most 30 days for security and diagnostics, then deleted. We
+            do not sell your data.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Now playing (Android)</h2>
+          <p>
+            Notification listener access is used only to show the current
+            title/artist and control playback. No notifications are stored or
+            transmitted.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Contact</h2>
+          <p>
+            For any question about your data, contact
+            <strong>AppVLab</strong> (publisher of PrivaCoach) via the store
+            listing or open an issue on the project’s GitHub repository.
+          </p>
+        </section>
+      </article>
+
+      <footer>
+        Dernière mise à jour : 1 août 2026 · Éditeur : AppVLab ·
+        <a href="https://github.com/AppVLab/privacoach-site"
+          >github.com/AppVLab/privacoach-site</a
+        >
+      </footer>
+    </main>
+
+    <script>
+      const fr = document.getElementById("lang-fr");
+      const en = document.getElementById("lang-en");
+      const btnFr = document.getElementById("btn-fr");
+      const btnEn = document.getElementById("btn-en");
+      const lede = document.querySelector("[data-i18n-lede]");
+
+      function setLang(lang) {
+        const isFr = lang === "fr";
+        fr.classList.toggle("is-active", isFr);
+        en.classList.toggle("is-active", !isFr);
+        btnFr.setAttribute("aria-pressed", String(isFr));
+        btnEn.setAttribute("aria-pressed", String(!isFr));
+        document.documentElement.lang = lang;
+        lede.textContent = isFr
+          ? "Coach santé & sport privé — local-first."
+          : "Private health & sport coach — local-first.";
+        document.title = isFr
+          ? "PrivaCoach — Politique de confidentialité"
+          : "PrivaCoach — Privacy policy";
+      }
+
+      btnFr.addEventListener("click", () => setLang("fr"));
+      btnEn.addEventListener("click", () => setLang("en"));
+
+      if (navigator.language.toLowerCase().startsWith("en")) {
+        setLang("en");
+      }
+    </script>
+  </body>
+</html>
