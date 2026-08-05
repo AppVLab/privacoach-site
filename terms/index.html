@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PrivaCoach — Conditions d’utilisation</title>
+    <meta
+      name="description"
+      content="Conditions d’utilisation de PrivaCoach : service, abonnements Premium, responsabilité."
+    />
+<style>
+      :root {
+        --bg0: #0f1419;
+        --bg1: #1a2332;
+        --ink: #eef3f8;
+        --muted: #9aafc2;
+        --accent: #5eead4;
+        --line: rgba(238, 243, 248, 0.12);
+        --card: rgba(255, 255, 255, 0.04);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+          serif;
+        color: var(--ink);
+        background:
+          radial-gradient(1200px 600px at 10% -10%, #243b55 0%, transparent 55%),
+          radial-gradient(900px 500px at 100% 0%, #1d4e4a 0%, transparent 45%),
+          linear-gradient(165deg, var(--bg0), var(--bg1) 55%, #121820);
+        line-height: 1.55;
+      }
+
+      main {
+        width: min(720px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 3.5rem 0 4rem;
+      }
+
+      .brand {
+        font-size: clamp(2.4rem, 7vw, 3.4rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin: 0 0 0.35rem;
+      }
+
+      .brand span {
+        color: var(--accent);
+      }
+
+      .lede {
+        margin: 0 0 1.75rem;
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 36ch;
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .toolbar button {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--ink);
+        border-radius: 999px;
+        padding: 0.45rem 0.95rem;
+        font: inherit;
+        font-size: 0.92rem;
+        cursor: pointer;
+      }
+
+      .toolbar button[aria-pressed="true"] {
+        border-color: var(--accent);
+        color: var(--bg0);
+        background: var(--accent);
+        font-weight: 700;
+      }
+
+      article {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 1.4rem 1.35rem 1.1rem;
+        backdrop-filter: blur(8px);
+      }
+
+      h1 {
+        font-size: 1.35rem;
+        margin: 0 0 0.85rem;
+      }
+
+      .intro {
+        margin: 0 0 1.4rem;
+        color: var(--muted);
+      }
+
+      section + section {
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--line);
+      }
+
+      h2 {
+        font-size: 1.05rem;
+        margin: 0 0 0.4rem;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      footer {
+        margin-top: 1.75rem;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      footer a {
+        color: var(--accent);
+      }
+
+      .lang {
+        display: none;
+      }
+
+      .lang.is-active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="brand">Priva<span>Coach</span></p>
+      <p class="lede" data-i18n-lede>
+        Coach santé &amp; sport privé — local-first.
+      </p>
+
+      <div class="toolbar" role="group" aria-label="Language">
+        <button type="button" id="btn-fr" aria-pressed="true">FR</button>
+        <button type="button" id="btn-en" aria-pressed="false">EN</button>
+      </div>
+
+      <article id="lang-fr" class="lang is-active" lang="fr">
+        <h1>Conditions d’utilisation</h1>
+        <p class="intro">
+          Les présentes conditions régissent l’utilisation de PrivaCoach, édité
+          par AppVLab. En utilisant l’application, tu acceptes ces conditions.
+        </p>
+
+        <section>
+          <h2>1. Service</h2>
+          <p>
+            PrivaCoach est un coach sportif et bien-être assisté par IA. Ce n’est
+            pas un dispositif médical et il ne remplace pas un avis médical, un
+            diagnostic ou un traitement. En cas de douleur, de pathologie ou de
+            doute, consulte un professionnel de santé.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Abonnements Premium</h2>
+          <p>
+            Certains contenus ou fonctionnalités peuvent être proposés via un
+            abonnement à renouvellement automatique (mensuel ou annuel), facturé
+            via l’App Store ou Google Play. Un essai gratuit d’introduction peut
+            être proposé selon les offres store. L’abonnement se renouvelle sauf
+            résiliation au moins 24 heures avant la fin de la période. Tu peux
+            gérer ou annuler l’abonnement dans les réglages de ton compte store.
+            Les prix affichés sont ceux du store de ta région (taxes incluses le
+            cas échéant).
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Données santé et permissions</h2>
+          <p>
+            Avec ton accord, PrivaCoach peut lire ou écrire certaines données via
+            Apple Santé ou Health Connect pour personnaliser le coaching. Tu
+            peux retirer ces autorisations à tout moment dans les réglages du
+            système. Le traitement des données est décrit dans la
+            <a href="../privacy/">Politique de confidentialité</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. IA et contenus générés</h2>
+          <p>
+            Les réponses du coach (mode local ou cloud anonymisé) sont générées
+            automatiquement et peuvent être inexactes. Tu restes responsable de
+            l’usage que tu en fais. N’indique pas d’informations personnelles
+            sensibles dans le chat cloud.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Responsabilité</h2>
+          <p>
+            Dans les limites autorisées par la loi, AppVLab ne saurait être tenu
+            responsable des dommages indirects, perte de données locales, ou
+            blessures liées à une activité physique entreprise suite aux
+            suggestions de l’app. Utilise PrivaCoach à tes propres risques et
+            selon ta condition.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Contact et mises à jour</h2>
+          <p>
+            Ces conditions peuvent être mises à jour. La version en ligne fait
+            foi. Pour toute question : <strong>AppVLab</strong>, éditeur de
+            PrivaCoach, via la fiche store ou le support indiqué à la
+            publication. Droit applicable : France, sous réserve des dispositions
+            impératives de protection du consommateur de ton pays de résidence.
+          </p>
+        </section>
+      </article>
+
+      <article id="lang-en" class="lang" lang="en">
+        <h1>Terms of Use</h1>
+        <p class="intro">
+          These terms govern the use of PrivaCoach, published by AppVLab. By
+          using the app, you agree to these terms.
+        </p>
+
+        <section>
+          <h2>1. Service</h2>
+          <p>
+            PrivaCoach is an AI-assisted fitness and wellness coach. It is not a
+            medical device and does not replace medical advice, diagnosis or
+            treatment. If you have pain, a medical condition or any doubt,
+            consult a healthcare professional.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Premium subscriptions</h2>
+          <p>
+            Some features may be offered via an auto-renewing subscription
+            (monthly or yearly), billed through the App Store or Google Play. An
+            introductory free trial may be offered depending on store offers. The
+            subscription renews unless cancelled at least 24 hours before the end
+            of the period. You can manage or cancel in your store account
+            settings. Displayed prices are those of your regional store (taxes
+            included where applicable).
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Health data and permissions</h2>
+          <p>
+            With your permission, PrivaCoach may read or write certain data via
+            Apple Health or Health Connect to personalize coaching. You can
+            revoke these permissions anytime in system settings. Data processing
+            is described in the
+            <a href="../privacy/">Privacy Policy</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. AI and generated content</h2>
+          <p>
+            Coach replies (on-device or anonymized cloud mode) are generated
+            automatically and may be inaccurate. You remain responsible for how
+            you use them. Do not share sensitive personal information in cloud
+            chat.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Liability</h2>
+          <p>
+            To the extent permitted by law, AppVLab is not liable for indirect
+            damages, local data loss, or injuries related to physical activity
+            undertaken following the app’s suggestions. Use PrivaCoach at your
+            own risk and according to your condition.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Contact and updates</h2>
+          <p>
+            These terms may be updated. The online version prevails. For
+            questions: <strong>AppVLab</strong>, publisher of PrivaCoach, via the
+            store listing or the support channel indicated at publication.
+            Governing law: France, subject to mandatory consumer protection rules
+            of your country of residence.
+          </p>
+        </section>
+      </article>
+
+      <footer>
+        Dernière mise à jour : 5 août 2026 · Éditeur : AppVLab ·
+        <a href="../privacy/">Confidentialité</a> ·
+        <a href="https://github.com/AppVLab/privacoach-site"
+          >github.com/AppVLab/privacoach-site</a
+        >
+      </footer>
+    </main>
+
+    <script>
+      const fr = document.getElementById("lang-fr");
+      const en = document.getElementById("lang-en");
+      const btnFr = document.getElementById("btn-fr");
+      const btnEn = document.getElementById("btn-en");
+      const lede = document.querySelector("[data-i18n-lede]");
+
+      function setLang(lang) {
+        const isFr = lang === "fr";
+        fr.classList.toggle("is-active", isFr);
+        en.classList.toggle("is-active", !isFr);
+        btnFr.setAttribute("aria-pressed", String(isFr));
+        btnEn.setAttribute("aria-pressed", String(!isFr));
+        document.documentElement.lang = lang;
+        lede.textContent = isFr
+          ? "Coach santé & sport privé — local-first."
+          : "Private health & sport coach — local-first.";
+        document.title = isFr
+          ? "PrivaCoach — Conditions d’utilisation"
+          : "PrivaCoach — Terms of Use";
+      }
+
+      btnFr.addEventListener("click", () => setLang("fr"));
+      btnEn.addEventListener("click", () => setLang("en"));
+
+      if (navigator.language.toLowerCase().startsWith("en")) {
+        setLang("en");
+      }
+    </script>
+  </body>
+</html>
