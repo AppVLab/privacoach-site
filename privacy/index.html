@@ -209,11 +209,27 @@
         </section>
 
         <section>
-          <h2>6. Contact</h2>
+          <h2>6. Site web AppVLab</h2>
+          <p>
+            Le site public
+            <a href="https://appvlab.com">appvlab.com</a> utilise
+            <a href="https://www.goatcounter.com/">GoatCounter</a> pour des
+            statistiques d’audience agrégées (pages vues). Aucun cookie de
+            tracking, aucun identifiant publicitaire, aucune adresse IP stockée.
+            Détails&nbsp;:
+            <a href="https://www.goatcounter.com/help/privacy"
+              >goatcounter.com/help/privacy</a
+            >.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Contact</h2>
           <p>
             Pour toute question relative à tes données, contacte
-            <strong>AppVLab</strong> (éditeur de PrivaCoach) via la fiche store
-            ou ouvre une issue sur le dépôt GitHub du projet.
+            <strong>AppVLab</strong> (éditeur de PrivaCoach) à
+            <a href="mailto:contact@appvlab.com">contact@appvlab.com</a>
+            ou via la fiche store.
           </p>
         </section>
       </article>
@@ -274,17 +290,32 @@
         </section>
 
         <section>
-          <h2>6. Contact</h2>
+          <h2>6. AppVLab website</h2>
+          <p>
+            The public site
+            <a href="https://appvlab.com">appvlab.com</a> uses
+            <a href="https://www.goatcounter.com/">GoatCounter</a> for
+            aggregated audience stats (page views). No tracking cookies, no
+            advertising identifiers, and no IP addresses stored. Details:
+            <a href="https://www.goatcounter.com/help/privacy"
+              >goatcounter.com/help/privacy</a
+            >.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Contact</h2>
           <p>
             For any question about your data, contact
-            <strong>AppVLab</strong> (publisher of PrivaCoach) via the store
-            listing or open an issue on the project’s GitHub repository.
+            <strong>AppVLab</strong> (publisher of PrivaCoach) at
+            <a href="mailto:contact@appvlab.com">contact@appvlab.com</a>
+            or via the store listing.
           </p>
         </section>
       </article>
 
       <footer>
-        Dernière mise à jour : 1 août 2026 · Éditeur : AppVLab · <a href="../terms/">Conditions</a> ·
+        Dernière mise à jour : 12 août 2026 · Éditeur : AppVLab · <a href="../terms/">Conditions</a> ·
         <a href="https://github.com/AppVLab/privacoach-site"
           >github.com/AppVLab/privacoach-site</a
         >
@@ -311,14 +342,40 @@
         document.title = isFr
           ? "PrivaCoach — Politique de confidentialité"
           : "PrivaCoach — Privacy policy";
+        document.querySelectorAll('a[href*="terms"]').forEach((a) => {
+          try {
+            const u = new URL(a.getAttribute("href"), location.href);
+            u.searchParams.set("lang", lang);
+            a.setAttribute("href", u.pathname + u.search + u.hash);
+          } catch (_) {}
+        });
+        try {
+          localStorage.setItem("appvlab_lang", lang);
+        } catch (_) {}
+        try {
+          const url = new URL(location.href);
+          url.searchParams.set("lang", lang);
+          history.replaceState(null, "", url);
+        } catch (_) {}
+      }
+
+      function initialLang() {
+        try {
+          const q = new URLSearchParams(location.search).get("lang");
+          if (q === "fr" || q === "en") return q;
+        } catch (_) {}
+        try {
+          const saved = localStorage.getItem("appvlab_lang");
+          if (saved === "fr" || saved === "en") return saved;
+        } catch (_) {}
+        return (navigator.language || "fr").toLowerCase().startsWith("en")
+          ? "en"
+          : "fr";
       }
 
       btnFr.addEventListener("click", () => setLang("fr"));
       btnEn.addEventListener("click", () => setLang("en"));
-
-      if (navigator.language.toLowerCase().startsWith("en")) {
-        setLang("en");
-      }
+      setLang(initialLang());
     </script>
   </body>
 </html>
