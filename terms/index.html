@@ -327,14 +327,40 @@
         document.title = isFr
           ? "PrivaCoach — Conditions d’utilisation"
           : "PrivaCoach — Terms of Use";
+        document.querySelectorAll('a[href*="privacy"]').forEach((a) => {
+          try {
+            const u = new URL(a.getAttribute("href"), location.href);
+            u.searchParams.set("lang", lang);
+            a.setAttribute("href", u.pathname + u.search + u.hash);
+          } catch (_) {}
+        });
+        try {
+          localStorage.setItem("appvlab_lang", lang);
+        } catch (_) {}
+        try {
+          const url = new URL(location.href);
+          url.searchParams.set("lang", lang);
+          history.replaceState(null, "", url);
+        } catch (_) {}
+      }
+
+      function initialLang() {
+        try {
+          const q = new URLSearchParams(location.search).get("lang");
+          if (q === "fr" || q === "en") return q;
+        } catch (_) {}
+        try {
+          const saved = localStorage.getItem("appvlab_lang");
+          if (saved === "fr" || saved === "en") return saved;
+        } catch (_) {}
+        return (navigator.language || "fr").toLowerCase().startsWith("en")
+          ? "en"
+          : "fr";
       }
 
       btnFr.addEventListener("click", () => setLang("fr"));
       btnEn.addEventListener("click", () => setLang("en"));
-
-      if (navigator.language.toLowerCase().startsWith("en")) {
-        setLang("en");
-      }
+      setLang(initialLang());
     </script>
   </body>
 </html>
